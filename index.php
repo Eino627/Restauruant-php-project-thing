@@ -1,84 +1,76 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luigi's Spagheteria</title>
-	<link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravintola</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/styles.css">
+
 </head>
 <body>
 
+
 <header>
-    <h1>Luigi's Spagheteria</h1>
+
+    <div class="logo">
+        Ruoka<span>Talo</span>
+    </div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="menu.php">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+        <a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) === 'index.php' ? 'active' : '' ?>">Etusivu</a>
+        <a href="menu.php" class="<?= basename($_SERVER['PHP_SELF']) === 'menu.php' ? 'active' : '' ?>">Ruokalista</a>
+        <a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) === 'cart.php' ? 'active' : '' ?>">Ostoskori</a>
+
+        <?php if(isset($_SESSION['user_id'])){ ?>
+
+            <a href="profile.php">Profiili</a>
+            <a href="logout.php">Kirjaudu ulos</a>
+
+        <?php } else { ?>
+
+            <a href="log_in.php" class="<?= basename($_SERVER['PHP_SELF']) === 'log_in.php' ? 'active' : '' ?>">Kirjaudu</a>
+            <a href="register.php" class="<?= basename($_SERVER['PHP_SELF']) === 'register.php' ? 'active' : '' ?>">Rekisteröidy</a>
+
+        <?php } ?>
+
     </nav>
+
 </header>
 
-<section class="hero">
-    <img src="images/M_img.webp" alt="Spaghetti">
 
-    <div class="hero-text">
-        <h2>Fresh Italian Pasta</h2>
-        <p>Authentic recipes.</p>
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Herkullista ruokaa<br>nopeasti kotiin</h1>
+
+        <p>
+            Tilaa suosikkiateriasi helposti ja nauti tuoreesta ruoasta kotona.
+        </p>
+
+        <a href="menu.php" class="btn">
+            Katso ruokalista
+        </a>
+
     </div>
+
 </section>
 
-<div class="container">
 
-    <section id="menu">
-        <h2 class="section-title">Popular Dishes</h2>
 
-        <div class="food-grid">
 
-            <div class="food-card">
-                <img src="images/img1.webp" alt="Spaghetti Bolognese">
-
-                <div class="food-card-content">
-                    <h3>Spaghetti Bolognese</h3>
-                    <p>Classic meat sauce with parmesan cheese.</p>
-                </div>
-            </div>
-
-            <div class="food-card">
-                <img src="images/img2.jpg" alt="Carbonara">
-
-                <div class="food-card-content">
-                    <h3>Carbonara</h3>
-                    <p>Creamy pasta with pancetta and black pepper.</p>
-                </div>
-            </div>
-
-            <div class="food-card">
-                <img src="images/img3.jpg" alt="Seafood Pasta">
-
-                <div class="food-card-content">
-                    <h3>Seafood Pasta</h3>
-                    <p>Shrimp, mussels and garlic butter sauce.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="about" style="margin-top:50px;">
-        <h2 class="section-title">About Us</h2>
-
-        <p style="text-align:center; max-width:800px; margin:auto;">
-            Welcome to Luigi's Spagheteria. We serve fresh handmade pasta,
-            homemade sauces and authentic Italian food made with quality ingredients.
-        </p>
-    </section>
-
-</div>
-
-<footer id="contact">
-    <p>Luigi's Spagheteria - Turku, Finland</p>
-    <p>Email: info@luigisspagheteria.com</p>
+<footer>
+    © 2026 Ravintolan hallintajärjestelmä
 </footer>
 
 </body>
