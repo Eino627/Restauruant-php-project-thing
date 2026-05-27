@@ -116,7 +116,7 @@ if (!empty($_SESSION['cart'])) {
 
 </div>
 
-<!-- LIVE PRICE UPDATE SCRIPT -->
+
 <script>
 document.querySelectorAll('.qty-input').forEach(input => {
     input.addEventListener('input', function() {

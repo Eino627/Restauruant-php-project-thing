@@ -20,6 +20,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <meta charset="UTF-8">
 <title>Profiili – RuokaTalo</title>
 <link rel="stylesheet" href="./css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
