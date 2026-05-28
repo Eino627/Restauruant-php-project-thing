@@ -85,9 +85,6 @@ session_start();
 
         <button type="submit" class="register-btn">Rekisteröidy</button>
 
-        <div class="login-link">
-            <p>Onko sinulla jo tili? <a href="log_in.php">Kirjaudu sisään</a></p>
-        </div>
 
     </form>
 </div>

@@ -2,21 +2,13 @@
 session_start();
 include("includes/db.php");
 
-// Get selected category (default: first category)
-$selectedCategory = isset($_GET['cat']) ? intval($_GET['cat']) : null;
+$stmt = $pdo->query("
+    SELECT * FROM products
+    ORDER BY products.id DESC
+");
 
-// Fetch all categories
-$categories = $pdo->query("SELECT * FROM categories")->fetchAll(PDO::FETCH_ASSOC);
-
-// If no category selected, use first one
-if (!$selectedCategory && count($categories) > 0) {
-    $selectedCategory = $categories[0]['id'];
-}
-
-// Fetch products for selected category
-$stmt = $pdo->prepare("SELECT * FROM products WHERE category_id = ?");
-$stmt->execute([$selectedCategory]);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="fi">
@@ -57,29 +49,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </nav>
 
 </header>
-
-
-<div class="menu-wrapper">
-
-    <!-- LEFT SIDEBAR -->
-    <div class="sidebar">
-        <h2>Kategoriat</h2>
-
-        <?php foreach ($categories as $cat): ?>
-            <a 
-                href="menu.php?cat=<?= $cat['id'] ?>" 
-                class="category-link <?= $selectedCategory == $cat['id'] ? 'category-active' : '' ?>"
-            >
-                <?= htmlspecialchars($cat['category_name']) ?>
-            </a>
-        <?php endforeach; ?>
-    </div>
-
-    <!-- RIGHT SIDE PRODUCTS -->
-    <div class="products-area">
-        
-
-        <div class="products-grid">
+       <div class="products-grid">
             <?php foreach ($products as $p): ?>
                 <div class="product-card">
                     <img src="images/menu/<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>">
@@ -93,9 +63,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
 
-    </div>
-
-</div>
+  
 <script>
 document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {

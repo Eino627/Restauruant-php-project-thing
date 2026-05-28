@@ -9,8 +9,6 @@ body {
   background: #f4f4f4;
 }
 
-/* HEADER */
-
 header {
   width: 100%;
   background: #111;
@@ -30,7 +28,7 @@ header {
 }
 
 .logo span {
-  color: orange;
+  color: green;
 }
 
 nav a {
@@ -42,15 +40,15 @@ nav a {
 }
 
 nav a:hover {
-  color: orange;
+  color: green;
 }
 nav a.active {
-  color: #ff7b00;
+  color: green;
   font-weight: 600;
 }
 /* HERO */
 #cart-count {
-  background: orange;
+  background: green;
   padding: 3px 8px;
   border-radius: 50px;
   color: #111;
@@ -89,7 +87,7 @@ nav a.active {
 .btn {
   display: inline-block;
   padding: 14px 30px;
-  background: orange;
+  background: green;
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -98,7 +96,7 @@ nav a.active {
 }
 
 .btn:hover {
-  background: #ff8800;
+  background: green;
 }
 
 /* PRODUCTS */
@@ -140,41 +138,14 @@ nav a.active {
   font-size: 22px;
 }
 
-.category-link {
-  display: block;
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-.category-link:hover {
-  background: #f0f0f0;
-}
-
-.category-active {
-  background: #ff7b00;
-  color: white;
-}
-
-/* RIGHT SIDE */
-.products-area {
-  flex: 1;
-  padding: 30px;
-  margin-left: 260px;
-  height: calc(100vh - 80px);
-  overflow-y: auto;
-}
-
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-}
 
+  padding: 30px;
+  margin: 60px;
+}
 .product-card {
   background: white;
   border-radius: 12px;
@@ -203,7 +174,7 @@ nav a.active {
 
 .price {
   font-weight: bold;
-  color: #e67e22;
+  color: green;
   margin-top: 8px;
 }
 
@@ -211,7 +182,7 @@ nav a.active {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
-  background: #e67e22;
+  background: green;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -248,7 +219,7 @@ nav a.active {
 
 .price {
   font-weight: bold;
-  color: #e67e22;
+  color: green;
 }
 
 .line-price {
@@ -277,7 +248,7 @@ nav a.active {
 
 .checkout-btn {
   display: block;
-  background: #e67e22;
+  background: green;
   color: white;
   padding: 12px;
   text-align: center;
@@ -324,14 +295,14 @@ nav a.active {
 }
 
 .input-group input:focus {
-  border-color: orange;
+  border-color: green;
   outline: none;
 }
 
 /* BUTTON */
 .register-btn {
   width: 100%;
-  background: orange;
+  background: green;
   color: #fff;
   padding: 14px;
   border: none;
@@ -342,10 +313,6 @@ nav a.active {
   font-weight: 600;
 }
 
-.register-btn:hover {
-  background: #ff8c1a;
-}
-
 /* LOGIN LINK */
 .login-link {
   text-align: center;
@@ -353,7 +320,7 @@ nav a.active {
 }
 
 .login-link a {
-  color: orange;
+  color: green;
   text-decoration: none;
   font-weight: 600;
 }
@@ -415,7 +382,7 @@ nav a.active {
 }
 
 .tab-btn.active {
-  background: orange;
+  background: green;
   color: white;
   box-shadow: 0 3px 10px rgba(255, 165, 0, 0.4);
 }
@@ -438,7 +405,7 @@ nav a.active {
   margin-bottom: 15px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid orange;
+  border-left: 4px solid greeen;
 }
 
 .order-box p {
@@ -449,7 +416,7 @@ nav a.active {
 .order-box a {
   display: inline-block;
   margin-top: 8px;
-  color: orange;
+  color: green;
   font-weight: 600;
   text-decoration: none;
 }
@@ -478,7 +445,7 @@ nav a.active {
 }
 
 #settings ul li a {
-  color: orange;
+  color: green;
   font-weight: 600;
   text-decoration: none;
 }
@@ -487,14 +454,9 @@ nav a.active {
   text-decoration: underline;
 }
 
-/*
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+.delete-link {
+  color: red;
 }
-
-/* FOOTER */
-
 footer {
   background: #111;
   color: white;
@@ -503,7 +465,43 @@ footer {
   margin-top: 60px;
 }
 
-/* RESPONSIVE */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 15px;
+}
+
+.form-container button {
+  background: green;
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: green;
+}
 
 @media (max-width: 768px) {
   .hero-content h1 {

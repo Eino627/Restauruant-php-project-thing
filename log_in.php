@@ -68,9 +68,7 @@ session_start();
 
         <button type="submit" class="register-btn">Kirjaudu</button>
 
-        <div class="login-link">
-            <p>Ei tiliä? <a href="register.php">Luo uusi tili</a></p>
-        </div>
+       
 
     </form>
 </div>
